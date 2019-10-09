@@ -1,15 +1,10 @@
-katz_deli = []
-
-def line(array)
- current_line = []
-   if current_line.size == 0
-     puts "The line is currently empty."
-   else
-     array.each do |name|
-       customers = "The line is currently: #{num}. #{name}"
-       num += 1
-       current_line << customers
-   end
-     return current_line
- end
-end
+function nowServing(katzDeli) {
+  let i = 0;
+  while (i < katzDeli.length) {
+    i++;
+  }
+  if (katzDeli.length === 0) {
+    return "There is nobody waiting to be served!";
+  }
+  else
+  return (`Currently serving ${katzDeli.shift()}.`);
