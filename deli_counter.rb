@@ -1,29 +1,40 @@
-var katzDeliLine = [];
+var katzDeli = [];
 
-function takeANumber(katzDeliLine, name) {
-  katzDeliLine.push(name)
-  return "Welcome, " + name + ". You are number " + katzDeliLine.length + " in line."
+function takeANumber(currentLine, name){
+var placeInLine = currentLine.length + 1;
+var outputString = “Welcome, ” + name +”. You are number ” + placeInLine + ” in line.”;
+currentLine.push(name);
+return outputString;
 }
 
-function currentLine(NewLine) {
-    var line = []
-    if (NewLine.length === 0) {
-      return "The line is currently empty."
-    } else {
-      for(var i = 0; i < NewLine.length; i++) {
-        line += (i + 1) + ". " + NewLine[i] + ", "
-      }
-      line = line.slice(0, line.length-2)
-      return "The line is currently: " + line
-    }
-    //
+function nowServing(currentLine){
+var outputString;
+if (currentLine.length === 0){
+outputString = “There is nobody waiting to be served!”
 }
-function nowServing(x) {
-  if (x.length === 0) {
-    return "There is nobody waiting to be served!"
-  } else {
-    var name = x[0];
-    x.splice(0, 1);
-    return "Currently serving " + name + ".";
-  }
+else{
+outputString = “Currently serving ” + currentLine[0] + “.”;
+currentLine.shift();
+}
+return outputString;
+}
+
+function currentLine(line){
+var outputString;
+if (line.length === 0){
+outputString = “The line is currently empty.”
+}
+else{
+outputString = “The line is currently: ”
+for(var i = 0; i < line.length ; i++){
+if (i === 0){
+
+outputString = outputString + (i+1) + “. ” + line[i];
+}
+else{
+outputString = outputString + “, ” + (i+1) + “. ” + line[i];
+}
+}
+}
+return outputString;
 }
