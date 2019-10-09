@@ -19,4 +19,4 @@ function currentLine(katzDeli) {
 }
 
 end 
-end 
+ 
