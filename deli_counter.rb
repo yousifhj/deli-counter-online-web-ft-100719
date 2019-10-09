@@ -1,4 +1,4 @@
-katz_deli = []
+var katzDeli = []
 
 def
 
